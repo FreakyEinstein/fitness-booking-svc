@@ -1,1 +1,37 @@
-[]
+[
+    {
+        "name": "Meditation",
+        "datetime_of_class": "2025-07-27T23:00:00+00:00",
+        "instructor": "Rahul",
+        "total_slots": 5,
+        "remaining_slots": 0
+    },
+    {
+        "name": "Zumba",
+        "datetime_of_class": "2025-07-28T00:00:00+00:00",
+        "instructor": "Anand",
+        "total_slots": 15,
+        "remaining_slots": 0
+    },
+    {
+        "name": "HIIT",
+        "datetime_of_class": "2025-07-28T05:00:00+00:00",
+        "instructor": "Kiran",
+        "total_slots": 10,
+        "remaining_slots": 0
+    },
+    {
+        "name": "Cardio",
+        "datetime_of_class": "2025-07-28T09:00:00+00:00",
+        "instructor": "Phani",
+        "total_slots": 30,
+        "remaining_slots": 0
+    },
+    {
+        "name": "Yoga",
+        "datetime_of_class": "2025-07-28T13:00:00+00:00",
+        "instructor": "Nanda",
+        "total_slots": 20,
+        "remaining_slots": 0
+    }
+]

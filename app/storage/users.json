@@ -3,18 +3,18 @@
         "name": "user",
         "email": "user@gmail.com",
         "password": "$2b$12$6qknCP75XMxp.BxrkqG.PudYMahxO7CVi9nOhxMHCDLa8s43EyaGm",
-        "role": "USER"
+        "role": "user"
     },
     {
         "name": "user2",
         "email": "user2@gmail.com",
         "password": "$2b$12$zBx1DZj9HqG1zXfxIMhsyuC4QA0nl8hLQuMuKf3uMtDeroCgWYIeq",
-        "role": "USER"
+        "role": "user"
     },
     {
-        "name": "admin",
+        "name": "Admin",
         "email": "admin@gmail.com",
-        "password": "$2b$12$6qknCP75XMxp.BxrkqG.PudYMahxO7CVi9nOhxMHCDLa8s43EyaGm",
-        "role": "ADMIN"
+        "password": "$2b$12$ePCtNI42OOoH0SJZ3RKmY.i.ikUg1PwXc/HOkrez9qSETXOv5WPHu",
+        "role": "admin"
     }
 ]
