@@ -44,7 +44,7 @@ def parse_admin_token(token: str = Depends(oauth2_scheme)):
     try:
         token = jwt.decode(token, settings.jwt_secret_key,
                            [settings.jwt_algorithm])
-        if token["role"] != "ADMIN":
+        if token["role"] != "admin":
             raise HTTPException(status_code=403, detail="Forbidden")
         return token
     except Exception as _:
