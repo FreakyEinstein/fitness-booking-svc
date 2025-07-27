@@ -31,15 +31,17 @@ def get_user_by_email(email):
     return next((u for u in users if u["email"] == email), None)
 
 
-def register_user(user_name: str, user_email: str, user_password: str):
+def register_user(user_name: str, user_email: str, user_password: str, role: str = "user"):
     try:
+        if role == "admin":
+            raise HTTPException(403, detail="Cannot register as an admin")
 
         # validate the payload
         user = UserSignup(
             name=user_name,
             email=user_email,
             password=user_password,
-            role="USER"
+            role=role
         )
 
         # check for duplicate user entry
@@ -57,7 +59,7 @@ def register_user(user_name: str, user_email: str, user_password: str):
             "name": user_name,
             "email": user_email,
             "password": hashed_password,
-            "role": "USER"
+            "role": role
         })
 
         save_users(users)
@@ -69,7 +71,7 @@ def register_user(user_name: str, user_email: str, user_password: str):
                     for err in e.errors(include_url=False)]
         )
 
-    return {"success": True, "detail": "User signed up successfully"}
+    return {"success": True, "detail": f"{role.upper()} signed up successfully"}
 
 
 def authenticate_user(user_email: str, user_password: str):
@@ -83,6 +85,7 @@ def authenticate_user(user_email: str, user_password: str):
         return HTTPException(status_code=401, detail="Incorrect Credentials")
 
     # create a jwt token
+    del user["password"]  # exclude password in the jwt token
     token = create_access_token(user)
 
     return {"success": True, "access_token": token}

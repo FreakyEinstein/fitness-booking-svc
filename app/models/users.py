@@ -1,17 +1,23 @@
-from pydantic import BaseModel, EmailStr, field_validator
+from pydantic import BaseModel, EmailStr, field_validator, Field
 from enum import Enum
 
 
 class Role(str, Enum):
     ADMIN = "admin"
     USER = "user"
+    INSTRUCTOR = "instructor"
 
 
 class UserSignup(BaseModel):
-    name: str
-    email: EmailStr
-    password: str
-    role: Role = Role.USER
+    """
+    User signup request.
+
+    - `role` is always "user" for signups.
+    """
+    name: str = Field(..., description="Full name of the user")
+    email: EmailStr = Field(..., description="User email address")
+    password: str = Field(..., description="Password (min 8 characters)")
+    role: Role = Field(Role.USER, description="User role (default: user)")
 
     @field_validator("name")
     def validate_name(cls, value):
@@ -27,8 +33,11 @@ class UserSignup(BaseModel):
 
 
 class UserLogin(BaseModel):
-    email: EmailStr
-    password: str
+    """
+    User login request.
+    """
+    email: EmailStr = Field(..., description="User email address")
+    password: str = Field(..., description="Password (min 8 characters)")
 
     @field_validator("password")
     def validate_password(cls, value):

@@ -16,5 +16,17 @@
         "email": "admin@gmail.com",
         "password": "$2b$12$ePCtNI42OOoH0SJZ3RKmY.i.ikUg1PwXc/HOkrez9qSETXOv5WPHu",
         "role": "admin"
+    },
+    {
+        "name": "Nanda",
+        "email": "nanda@gmail.com",
+        "password": "$2b$12$cv7deHs43URCgeamQW1kpeHLIa1tUbaYbFszrN3a.8Znrv.HyWR2e",
+        "role": "user"
+    },
+    {
+        "name": "Nanda",
+        "email": "nandakrishnak1999@gmail.com",
+        "password": "$2b$12$81xm8422LzavRdnkKV7t8uKVHdro3hjLDiFwnj/eg8sfGKTM5gLIi",
+        "role": "instructor"
     }
 ]

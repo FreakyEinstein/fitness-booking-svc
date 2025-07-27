@@ -6,20 +6,32 @@ from fastapi import Request
 from ..config import Settings
 
 settings = Settings()
-timezone = settings.app_timezone
-APP_TIMEZONE = pytz.timezone(timezone)
+APP_TIMEZONE = pytz.timezone(settings.app_timezone)
 
 
-def convert_utc_to_local(dt: str, client_timezone) -> str:
-    if client_timezone:
-        set_timezone = client_timezone
-    else:
-        set_timezone = APP_TIMEZONE
-    dt_utc = datetime.fromisoformat(dt)
-    if dt_utc.tzinfo is None:
-        dt_utc = dt_utc.replace(tzinfo=pytz.UTC)
-    dt_local = dt_utc.astimezone(set_timezone)
-    return dt_local.strftime("%d-%m-%Y %H:%M")
+def parse_iso_datetime(dt: str) -> datetime:
+    """Parse ISO string to aware datetime (UTC if no tzinfo)."""
+    dt_obj = datetime.fromisoformat(dt)
+    if dt_obj.tzinfo is None:
+        dt_obj = dt_obj.replace(tzinfo=pytz.UTC)
+    return dt_obj
+
+
+def to_local(dt: datetime, tz_str: str = None) -> datetime:
+    """Convert aware datetime to local timezone (default app timezone)."""
+    tz = pytz.timezone(tz_str) if tz_str else APP_TIMEZONE
+    return dt.astimezone(tz)
+
+
+def to_local_str(dt: datetime, tz_str: str = None, fmt: str = "%d-%m-%Y %H:%M") -> str:
+    """Convert aware datetime to local timezone and format as string."""
+    return to_local(dt, tz_str).strftime(fmt)
+
+
+def convert_utc_to_local(dt: str, client_timezone=None) -> str:
+    """Convert UTC ISO string to local time string."""
+    dt_obj = parse_iso_datetime(dt)
+    return to_local_str(dt_obj, client_timezone)
 
 
 def get_timezone_from_ip(request: Request):
@@ -28,8 +40,10 @@ def get_timezone_from_ip(request: Request):
         response = requests.get(f'https://ipapi.co/{ip_address}/json/')
         data = response.json()
         if 'timezone' in data:
-            return data['timezone']['id']
+            return data['timezone']
         else:
             return None
     except requests.exceptions.RequestException:
         return None
+
+# Deprecated: Use app/utils/timezone_utils.py for all timezone and datetime handling.

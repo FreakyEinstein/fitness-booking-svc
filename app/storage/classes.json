@@ -1,37 +1,82 @@
 [
     {
+        "id": "8edb9703-340f-4c9b-874a-34754503c4b1",
         "name": "Meditation",
         "datetime_of_class": "2025-07-27T23:00:00+00:00",
         "instructor": "Rahul",
         "total_slots": 5,
-        "remaining_slots": 0
+        "remaining_slots": 5,
+        "duration_in_hours": 1,
+        "instructor_email": "nandakrishnak1999@gmail.com"
     },
     {
+        "id": "b2c1f3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
         "name": "Zumba",
         "datetime_of_class": "2025-07-28T00:00:00+00:00",
         "instructor": "Anand",
         "total_slots": 15,
-        "remaining_slots": 0
+        "remaining_slots": 15,
+        "duration_in_hours": 2,
+        "instructor_email": "nandakrishnak1999@gmail.com"
     },
     {
+        "id": "8d06db84-2ffd-4ed9-81bf-81e85abb4e6a",
+        "name": "Advance Zumba Class",
+        "datetime_of_class": "2025-07-28T00:00:00+00:00",
+        "total_slots": 7,
+        "duration_in_hours": 1,
+        "remaining_slots": 7,
+        "instructor": "Nanda",
+        "instructor_email": "nandakrishnak1999@gmail.com"
+    },
+    {
+        "id": "629dc5e6-1580-4ed8-86fc-8f27ccf0c870",
+        "name": "Test Class",
+        "datetime_of_class": "2025-07-28T00:00:00+00:00",
+        "total_slots": 10,
+        "duration_in_hours": 1,
+        "remaining_slots": 10,
+        "instructor": "Nanda",
+        "instructor_email": "nandakrishnak1999@gmail.com"
+    },
+    {
+        "id": "c3d4e5f6-7a8b-9c0d-e1f2-3a4b5c6d7e8f",
         "name": "HIIT",
         "datetime_of_class": "2025-07-28T05:00:00+00:00",
         "instructor": "Kiran",
         "total_slots": 10,
-        "remaining_slots": 0
+        "remaining_slots": 10,
+        "duration_in_hours": 1,
+        "instructor_email": "nandakrishnak1999@gmail.com"
     },
     {
+        "id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
         "name": "Cardio",
         "datetime_of_class": "2025-07-28T09:00:00+00:00",
         "instructor": "Phani",
         "total_slots": 30,
-        "remaining_slots": 0
+        "remaining_slots": 30,
+        "duration_in_hours": 1,
+        "instructor_email": "nandakrishnak1999@gmail.com"
     },
     {
+        "id": "a1c2648e-a769-44ab-80bb-1ffec4833a31",
+        "name": "Yoga",
+        "datetime_of_class": "2025-07-28T10:00:00+00:00",
+        "instructor": "Nanda",
+        "total_slots": 10,
+        "duration_in_hours": 1,
+        "remaining_slots": 9,
+        "instructor_email": "nandakrishnak1999@gmail.com"
+    },
+    {
+        "id": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
         "name": "Yoga",
         "datetime_of_class": "2025-07-28T13:00:00+00:00",
         "instructor": "Nanda",
         "total_slots": 20,
-        "remaining_slots": 0
+        "remaining_slots": 20,
+        "duration_in_hours": 2,
+        "instructor_email": "nanda@gmail.com"
     }
 ]

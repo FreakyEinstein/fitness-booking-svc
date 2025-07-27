@@ -40,6 +40,17 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
         raise HTTPException(status_code=403, detail="Not Authorized")
 
 
+def parse_instructor_token(token: str = Depends(oauth2_scheme)):
+    try:
+        token = jwt.decode(token, settings.jwt_secret_key,
+                           [settings.jwt_algorithm])
+        if token["role"] != "instructor":
+            raise HTTPException(status_code=403, detail="Forbidden")
+        return token
+    except Exception as _:
+        raise HTTPException(status_code=403, detail="Not Authorized")
+
+
 def parse_admin_token(token: str = Depends(oauth2_scheme)):
     try:
         token = jwt.decode(token, settings.jwt_secret_key,
