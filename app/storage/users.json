@@ -1,32 +1,50 @@
 [
     {
-        "name": "user",
-        "email": "user@gmail.com",
-        "password": "$2b$12$6qknCP75XMxp.BxrkqG.PudYMahxO7CVi9nOhxMHCDLa8s43EyaGm",
-        "role": "user"
-    },
-    {
-        "name": "user2",
-        "email": "user2@gmail.com",
-        "password": "$2b$12$zBx1DZj9HqG1zXfxIMhsyuC4QA0nl8hLQuMuKf3uMtDeroCgWYIeq",
-        "role": "user"
-    },
-    {
         "name": "Admin",
-        "email": "admin@gmail.com",
-        "password": "$2b$12$ePCtNI42OOoH0SJZ3RKmY.i.ikUg1PwXc/HOkrez9qSETXOv5WPHu",
+        "email": "admin@fit.com",
+        "password": "$2b$12$adminhashedpassword",
         "role": "admin"
     },
     {
-        "name": "Nanda",
-        "email": "nanda@gmail.com",
-        "password": "$2b$12$cv7deHs43URCgeamQW1kpeHLIa1tUbaYbFszrN3a.8Znrv.HyWR2e",
+        "name": "Alice",
+        "email": "alice@fit.com",
+        "password": "$2b$12$alicehashedpassword",
         "role": "user"
     },
     {
-        "name": "Nanda",
-        "email": "nandakrishnak1999@gmail.com",
-        "password": "$2b$12$81xm8422LzavRdnkKV7t8uKVHdro3hjLDiFwnj/eg8sfGKTM5gLIi",
+        "name": "Bob",
+        "email": "bob@fit.com",
+        "password": "$2b$12$bobhashedpassword",
+        "role": "user"
+    },
+    {
+        "name": "Charlie",
+        "email": "charlie@fit.com",
+        "password": "$2b$12$charliehashedpassword",
+        "role": "user"
+    },
+    {
+        "name": "Diana",
+        "email": "diana@fit.com",
+        "password": "$2b$12$dianahashedpassword",
+        "role": "user"
+    },
+    {
+        "name": "Instructor1",
+        "email": "inst1@fit.com",
+        "password": "$2b$12$inst1hashedpassword",
+        "role": "instructor"
+    },
+    {
+        "name": "Instructor2",
+        "email": "inst2@fit.com",
+        "password": "$2b$12$inst2hashedpassword",
+        "role": "instructor"
+    },
+    {
+        "name": "Instructor3",
+        "email": "inst3@fit.com",
+        "password": "$2b$12$inst3hashedpassword",
         "role": "instructor"
     }
 ]

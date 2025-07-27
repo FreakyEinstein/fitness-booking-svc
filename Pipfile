@@ -12,6 +12,9 @@ loguru = "*"
 bcrypt = "*"
 pytz = "*"
 requests = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-html = "*"
 
 [dev-packages]
 

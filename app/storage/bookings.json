@@ -4,5 +4,725 @@
         "booked_at": "2025-07-27T11:51:24.315360+00:00",
         "user_email": "nanda@gmail.com",
         "user_name": "Nanda"
+    },
+    {
+        "class_id": "class-1",
+        "booked_at": "2025-07-20T10:00:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-2",
+        "booked_at": "2025-07-20T10:01:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-3",
+        "booked_at": "2025-07-20T10:02:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-4",
+        "booked_at": "2025-07-20T10:03:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-5",
+        "booked_at": "2025-07-20T10:04:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-6",
+        "booked_at": "2025-07-20T10:05:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-7",
+        "booked_at": "2025-07-20T10:06:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-8",
+        "booked_at": "2025-07-20T10:07:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-9",
+        "booked_at": "2025-07-20T10:08:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-10",
+        "booked_at": "2025-07-20T10:09:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-11",
+        "booked_at": "2025-07-20T10:10:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-12",
+        "booked_at": "2025-07-20T10:11:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-13",
+        "booked_at": "2025-07-20T10:12:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-14",
+        "booked_at": "2025-07-20T10:13:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-15",
+        "booked_at": "2025-07-20T10:14:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-16",
+        "booked_at": "2025-07-20T10:15:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-17",
+        "booked_at": "2025-07-20T10:16:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-18",
+        "booked_at": "2025-07-20T10:17:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-19",
+        "booked_at": "2025-07-20T10:18:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-20",
+        "booked_at": "2025-07-20T10:19:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-21",
+        "booked_at": "2025-07-20T10:20:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-22",
+        "booked_at": "2025-07-20T10:21:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-23",
+        "booked_at": "2025-07-20T10:22:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-24",
+        "booked_at": "2025-07-20T10:23:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-25",
+        "booked_at": "2025-07-20T10:24:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-26",
+        "booked_at": "2025-07-20T10:25:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-27",
+        "booked_at": "2025-07-20T10:26:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-28",
+        "booked_at": "2025-07-20T10:27:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-29",
+        "booked_at": "2025-07-20T10:28:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-30",
+        "booked_at": "2025-07-20T10:29:00+00:00",
+        "user_email": "alice@fit.com",
+        "user_name": "Alice"
+    },
+    {
+        "class_id": "class-1",
+        "booked_at": "2025-07-20T11:00:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-2",
+        "booked_at": "2025-07-20T11:01:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-3",
+        "booked_at": "2025-07-20T11:02:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-4",
+        "booked_at": "2025-07-20T11:03:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-5",
+        "booked_at": "2025-07-20T11:04:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-6",
+        "booked_at": "2025-07-20T11:05:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-7",
+        "booked_at": "2025-07-20T11:06:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-8",
+        "booked_at": "2025-07-20T11:07:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-9",
+        "booked_at": "2025-07-20T11:08:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-10",
+        "booked_at": "2025-07-20T11:09:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-11",
+        "booked_at": "2025-07-20T11:10:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-12",
+        "booked_at": "2025-07-20T11:11:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-13",
+        "booked_at": "2025-07-20T11:12:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-14",
+        "booked_at": "2025-07-20T11:13:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-15",
+        "booked_at": "2025-07-20T11:14:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-16",
+        "booked_at": "2025-07-20T11:15:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-17",
+        "booked_at": "2025-07-20T11:16:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-18",
+        "booked_at": "2025-07-20T11:17:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-19",
+        "booked_at": "2025-07-20T11:18:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-20",
+        "booked_at": "2025-07-20T11:19:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-21",
+        "booked_at": "2025-07-20T11:20:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-22",
+        "booked_at": "2025-07-20T11:21:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-23",
+        "booked_at": "2025-07-20T11:22:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-24",
+        "booked_at": "2025-07-20T11:23:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-25",
+        "booked_at": "2025-07-20T11:24:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-26",
+        "booked_at": "2025-07-20T11:25:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-27",
+        "booked_at": "2025-07-20T11:26:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-28",
+        "booked_at": "2025-07-20T11:27:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-29",
+        "booked_at": "2025-07-20T11:28:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-30",
+        "booked_at": "2025-07-20T11:29:00+00:00",
+        "user_email": "bob@fit.com",
+        "user_name": "Bob"
+    },
+    {
+        "class_id": "class-1",
+        "booked_at": "2025-07-20T12:00:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-2",
+        "booked_at": "2025-07-20T12:01:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-3",
+        "booked_at": "2025-07-20T12:02:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-4",
+        "booked_at": "2025-07-20T12:03:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-5",
+        "booked_at": "2025-07-20T12:04:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-6",
+        "booked_at": "2025-07-20T12:05:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-7",
+        "booked_at": "2025-07-20T12:06:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-8",
+        "booked_at": "2025-07-20T12:07:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-9",
+        "booked_at": "2025-07-20T12:08:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-10",
+        "booked_at": "2025-07-20T12:09:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-11",
+        "booked_at": "2025-07-20T12:10:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-12",
+        "booked_at": "2025-07-20T12:11:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-13",
+        "booked_at": "2025-07-20T12:12:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-14",
+        "booked_at": "2025-07-20T12:13:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-15",
+        "booked_at": "2025-07-20T12:14:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-16",
+        "booked_at": "2025-07-20T12:15:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-17",
+        "booked_at": "2025-07-20T12:16:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-18",
+        "booked_at": "2025-07-20T12:17:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-19",
+        "booked_at": "2025-07-20T12:18:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-20",
+        "booked_at": "2025-07-20T12:19:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-21",
+        "booked_at": "2025-07-20T12:20:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-22",
+        "booked_at": "2025-07-20T12:21:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-23",
+        "booked_at": "2025-07-20T12:22:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-24",
+        "booked_at": "2025-07-20T12:23:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-25",
+        "booked_at": "2025-07-20T12:24:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-26",
+        "booked_at": "2025-07-20T12:25:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-27",
+        "booked_at": "2025-07-20T12:26:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-28",
+        "booked_at": "2025-07-20T12:27:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-29",
+        "booked_at": "2025-07-20T12:28:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-30",
+        "booked_at": "2025-07-20T12:29:00+00:00",
+        "user_email": "charlie@fit.com",
+        "user_name": "Charlie"
+    },
+    {
+        "class_id": "class-1",
+        "booked_at": "2025-07-20T13:00:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-2",
+        "booked_at": "2025-07-20T13:01:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-3",
+        "booked_at": "2025-07-20T13:02:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-4",
+        "booked_at": "2025-07-20T13:03:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-5",
+        "booked_at": "2025-07-20T13:04:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-6",
+        "booked_at": "2025-07-20T13:05:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-7",
+        "booked_at": "2025-07-20T13:06:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-8",
+        "booked_at": "2025-07-20T13:07:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-9",
+        "booked_at": "2025-07-20T13:08:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-10",
+        "booked_at": "2025-07-20T13:09:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-11",
+        "booked_at": "2025-07-20T13:10:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-12",
+        "booked_at": "2025-07-20T13:11:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-13",
+        "booked_at": "2025-07-20T13:12:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-14",
+        "booked_at": "2025-07-20T13:13:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-15",
+        "booked_at": "2025-07-20T13:14:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-16",
+        "booked_at": "2025-07-20T13:15:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-17",
+        "booked_at": "2025-07-20T13:16:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-18",
+        "booked_at": "2025-07-20T13:17:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-19",
+        "booked_at": "2025-07-20T13:18:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-20",
+        "booked_at": "2025-07-20T13:19:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-21",
+        "booked_at": "2025-07-20T13:20:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-22",
+        "booked_at": "2025-07-20T13:21:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-23",
+        "booked_at": "2025-07-20T13:22:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-24",
+        "booked_at": "2025-07-20T13:23:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-25",
+        "booked_at": "2025-07-20T13:24:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-26",
+        "booked_at": "2025-07-20T13:25:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-27",
+        "booked_at": "2025-07-20T13:26:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-28",
+        "booked_at": "2025-07-20T13:27:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-29",
+        "booked_at": "2025-07-20T13:28:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
+    },
+    {
+        "class_id": "class-30",
+        "booked_at": "2025-07-20T13:29:00+00:00",
+        "user_email": "diana@fit.com",
+        "user_name": "Diana"
     }
 ]

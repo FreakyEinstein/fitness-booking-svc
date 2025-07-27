@@ -51,8 +51,8 @@ def book_class(token: dict, booking: Booking, timezone: str | None = APP_TIMEZON
 
     # check if the class was already booked by the same user
     existing_bookings = load_bookings()
-    for booking in existing_bookings:
-        if booking["class_id"] == class_details["_id"] and booking["user_email"] == token["email"]:
+    for booking_record in existing_bookings:
+        if booking_record["class_id"] == class_details["id"] and booking_record["user_email"] == token["email"]:
             raise HTTPException(
                 403, detail="Class already booked by this user")
 
@@ -82,7 +82,7 @@ def book_class(token: dict, booking: Booking, timezone: str | None = APP_TIMEZON
 
     # Create and store booking
     doc = {
-        "class_id": booking.class_id,
+        "class_id": class_details["id"],
         "booked_at": now_utc.isoformat(),
         "user_email": token["email"],
         "user_name": token["name"]
