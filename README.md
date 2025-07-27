@@ -101,3 +101,7 @@ PYTHONPATH=$PYTHONPATH:../app python scripts/cleanup_test_data.py
 3. **Create a Class** via `POST /classes`
 4. **View All Bookings for Instructor's Classes** via `GET /book/bookings/me`
 5. **Attempt to View Bookings for Others' Classes** → should fail (unauthorized access)
+
+### Postman Collection json can be found in the repository to test the worflows
+
+`Fitness Class Booking API.postman_collection.json`

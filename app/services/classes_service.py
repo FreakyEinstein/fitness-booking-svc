@@ -95,9 +95,10 @@ def create_new_class(session_class: Class, token: dict):
     doc["datetime_of_class"] = parse_datetime_string_to_utc_iso(
         doc["datetime_of_class"])
     classes = load_classes()
+    print(doc)
     classes.append(doc)
     save_classes(classes)
-    return {'success': True, 'detail': "Class successfully added"}
+    return {'success': True, 'detail': "Class successfully added", 'class_id': doc['id']}
 
 
 def get_classes(timezone: str = None):

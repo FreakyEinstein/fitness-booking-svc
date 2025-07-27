@@ -5,7 +5,7 @@
         "datetime_of_class": "2025-07-27T23:00:00+00:00",
         "instructor": "Rahul",
         "total_slots": 5,
-        "remaining_slots": 2,
+        "remaining_slots": 5,
         "duration_in_hours": 1,
         "instructor_email": "nandakrishnak1999@gmail.com"
     },
@@ -15,7 +15,7 @@
         "datetime_of_class": "2025-07-28T00:00:00+00:00",
         "instructor": "Anand",
         "total_slots": 15,
-        "remaining_slots": 13,
+        "remaining_slots": 15,
         "duration_in_hours": 2,
         "instructor_email": "nandakrishnak1999@gmail.com"
     },

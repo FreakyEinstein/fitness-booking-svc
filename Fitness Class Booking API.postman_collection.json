@@ -1,0 +1,1371 @@
+{
+	"info": {
+		"_postman_id": "1ab583b7-c646-4563-b39b-004b570baf72",
+		"name": "Fitness Class Booking API",
+		"description": "A complete Postman collection for the Fitness Class Booking API built with FastAPI.\n\n## Overview\n\nThis API supports two main user roles:\n\n- **Users**: Can view and book classes\n    \n- **Instructors**: Can create classes and view who booked them\n    \n\n## Features\n\n- JWT Authentication with automatic token handling\n    \n- Role-based access control\n    \n- Class scheduling and booking\n    \n- Conflict prevention for overlapping bookings\n    \n- Timezone support (defaults to Asia/Kolkata)\n    \n\n## Usage Instructions\n\n1. **Setup**: Update the `baseUrl` variable to match your server (default: [http://localhost:8000](http://localhost:8000))\n    \n2. **User Workflow**: Run requests in the \"User Workflow\" folder in sequence\n    \n3. **Instructor Workflow**: Run requests in the \"Instructor Workflow\" folder in sequence\n    \n4. **Authentication**: Tokens are automatically captured and used in subsequent requests\n    \n\n## Test Data\n\n- Pre-configured with sample users and instructors\n    \n- Realistic class schedules and booking scenarios\n    \n- All requests include appropriate test data\n    \n\n## Environment Variables\n\n- `baseUrl`: API base URL (default: [http://localhost:8000](http://localhost:8000))\n    \n- `accessToken`: JWT token (auto-managed)\n    \n- `classId`: Class ID for booking operations (auto-managed)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19903857"
+	},
+	"item": [
+		{
+			"name": "User Workflow",
+			"item": [
+				{
+					"name": "1. User Signup",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "John Doe",
+									"description": "Full name of the user"
+								},
+								{
+									"key": "email",
+									"value": "john.doe@example.com",
+									"description": "User email address"
+								},
+								{
+									"key": "password",
+									"value": "password123",
+									"description": "Password (min 8 characters)"
+								},
+								{
+									"key": "client_id",
+									"value": "user",
+									"description": "Client type - choose between 'user' and 'instructor'"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						},
+						"description": "Register a new user account.\n\n**Parameters:**\n- **name**: Full name of the user\n- **email**: User email address\n- **password**: Password (min 8 characters)\n- **client_id**: Choose between 'user' and 'instructor'"
+					},
+					"response": [
+						{
+							"name": "1. User Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "John Doe",
+											"description": "Full name of the user"
+										},
+										{
+											"key": "email",
+											"value": "john.doe@example.com",
+											"description": "User email address"
+										},
+										{
+											"key": "password",
+											"value": "password123",
+											"description": "Password (min 8 characters)"
+										},
+										{
+											"key": "client_id",
+											"value": "user",
+											"description": "Client type - choose between 'user' and 'instructor'"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:37:13 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "55"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"detail\": \"USER signed up successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "2. User Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Extract and store access token for subsequent requests",
+									"if (pm.response.code === 200) {",
+									"    const responseJson = pm.response.json();",
+									"    if (responseJson.access_token) {",
+									"        pm.collectionVariables.set('accessToken', responseJson.access_token);",
+									"        console.log('Access token saved:', responseJson.access_token);",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "john.doe@example.com",
+									"description": "User email address"
+								},
+								{
+									"key": "password",
+									"value": "password123",
+									"description": "Password"
+								},
+								{
+									"key": "client_id",
+									"value": "user",
+									"description": "Client type - choose between 'user' and 'instructor'"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Login and get JWT token for authentication.\n\n**Parameters:**\n- **username**: User email address\n- **password**: Password\n- **client_id**: Choose between 'user' and 'instructor'\n\n**Note**: The access token is automatically captured and stored for use in subsequent requests."
+					},
+					"response": [
+						{
+							"name": "2. User Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "john.doe@example.com",
+											"description": "User email address"
+										},
+										{
+											"key": "password",
+											"value": "password123",
+											"description": "Password"
+										},
+										{
+											"key": "client_id",
+											"value": "user",
+											"description": "Client type - choose between 'user' and 'instructor'"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:37:42 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "223"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSm9obiBEb2UiLCJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwicm9sZSI6InVzZXIiLCJleHAiOjE3NTM2MjM4MjN9.PHW18tz3tO54yAjpMRRtUQl0nl_n9OR3yZ0lxT4m_yI\"\n}"
+						}
+					]
+				},
+				{
+					"name": "3. View All Classes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Store first available class ID for booking",
+									"if (pm.response.code === 200) {",
+									"   const classes = pm.response.json();",
+									"   if (classes && classes.length > 0) {",
+									"       // Find classes with available slots",
+									"       const availableClasses = classes.filter(cls => cls.remaining_slots > 0);",
+									"       if (availableClasses.length > 0) {",
+									"           // Store first available class",
+									"           pm.collectionVariables.set('classId', availableClasses[0].id);",
+									"           console.log('Available class ID saved:', availableClasses[0].id);",
+									"           console.log('Class name:', availableClasses[0].name);",
+									"       }",
+									"       if (availableClasses.length > 1) {",
+									"           // Store second available class if exists",
+									"           pm.collectionVariables.set('classId2', availableClasses[1].id);",
+									"           console.log('Second available class ID saved:', availableClasses[1].id);",
+									"           console.log('Second class name:', availableClasses[1].name);",
+									"       }",
+									"   }",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/classes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"classes"
+							],
+							"query": [
+								{
+									"key": "timezone",
+									"value": "Asia/Kolkata",
+									"description": "Timezone string (optional) - defaults to IP-based or Asia/Kolkata",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get all available fitness classes with their schedules, instructors, and slot availability.\n\n**Query Parameters:**\n- **timezone** (optional): Timezone string (e.g. \"Asia/Kolkata\"). If not provided, uses IP-based detection or default timezone.\n\n**Response includes:**\n- Class ID, name, and instructor\n- Date and time (localized to specified timezone)\n- Total and remaining slots\n- Duration in hours"
+					},
+					"response": [
+						{
+							"name": "3. View All Classes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/classes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classes"
+									],
+									"query": [
+										{
+											"key": "timezone",
+											"value": "Asia/Kolkata",
+											"description": "Timezone string (optional) - defaults to IP-based or Asia/Kolkata",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:38:17 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "8221"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"8edb9703-340f-4c9b-874a-34754503c4b1\",\n        \"name\": \"Meditation\",\n        \"datetime_of_class\": \"2025-07-27T23:00:00+00:00\",\n        \"instructor\": \"Rahul\",\n        \"total_slots\": 5,\n        \"remaining_slots\": 2,\n        \"duration_in_hours\": 1,\n        \"instructor_email\": \"nandakrishnak1999@gmail.com\"\n    },\n    {\n        \"id\": \"b2c1f3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d\",\n        \"name\": \"Zumba\",\n        \"datetime_of_class\": \"2025-07-28T00:00:00+00:00\",\n        \"instructor\": \"Anand\",\n        \"total_slots\": 15,\n        \"remaining_slots\": 13,\n        \"duration_in_hours\": 2,\n        \"instructor_email\": \"nandakrishnak1999@gmail.com\"\n    },\n    {\n        \"id\": \"8d06db84-2ffd-4ed9-81bf-81e85abb4e6a\",\n        \"name\": \"Advance Zumba Class\",\n        \"datetime_of_class\": \"2025-07-28T00:00:00+00:00\",\n        \"total_slots\": 7,\n        \"duration_in_hours\": 1,\n        \"remaining_slots\": 7,\n        \"instructor\": \"Nanda\",\n        \"instructor_email\": \"nandakrishnak1999@gmail.com\"\n    },\n    {\n        \"id\": \"629dc5e6-1580-4ed8-86fc-8f27ccf0c870\",\n        \"name\": \"Test Class\",\n        \"datetime_of_class\": \"2025-07-28T00:00:00+00:00\",\n        \"total_slots\": 10,\n        \"duration_in_hours\": 1,\n        \"remaining_slots\": 10,\n        \"instructor\": \"Nanda\",\n        \"instructor_email\": \"nandakrishnak1999@gmail.com\"\n    },\n    {\n        \"id\": \"c3d4e5f6-7a8b-9c0d-e1f2-3a4b5c6d7e8f\",\n        \"name\": \"HIIT\",\n        \"datetime_of_class\": \"2025-07-28T05:00:00+00:00\",\n        \"instructor\": \"Kiran\",\n        \"total_slots\": 10,\n        \"remaining_slots\": 10,\n        \"duration_in_hours\": 1,\n        \"instructor_email\": \"nandakrishnak1999@gmail.com\"\n    },\n    {\n        \"id\": \"class-1\",\n        \"name\": \"Yoga Basics\",\n        \"datetime_of_class\": \"2025-07-28T06:00:00+00:00\",\n        \"instructor\": \"Instructor1\",\n        \"instructor_email\": \"inst1@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-2\",\n        \"name\": \"Power Yoga\",\n        \"datetime_of_class\": \"2025-07-28T08:00:00+00:00\",\n        \"instructor\": \"Instructor1\",\n        \"instructor_email\": \"inst1@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a\",\n        \"name\": \"Cardio\",\n        \"datetime_of_class\": \"2025-07-28T09:00:00+00:00\",\n        \"instructor\": \"Phani\",\n        \"total_slots\": 30,\n        \"remaining_slots\": 30,\n        \"duration_in_hours\": 1,\n        \"instructor_email\": \"nandakrishnak1999@gmail.com\"\n    },\n    {\n        \"id\": \"a1c2648e-a769-44ab-80bb-1ffec4833a31\",\n        \"name\": \"Yoga\",\n        \"datetime_of_class\": \"2025-07-28T10:00:00+00:00\",\n        \"instructor\": \"Nanda\",\n        \"total_slots\": 10,\n        \"duration_in_hours\": 1,\n        \"remaining_slots\": 9,\n        \"instructor_email\": \"nandakrishnak1999@gmail.com\"\n    },\n    {\n        \"id\": \"class-3\",\n        \"name\": \"Pilates\",\n        \"datetime_of_class\": \"2025-07-28T10:00:00+00:00\",\n        \"instructor\": \"Instructor1\",\n        \"instructor_email\": \"inst1@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-4\",\n        \"name\": \"HIIT Morning\",\n        \"datetime_of_class\": \"2025-07-28T12:00:00+00:00\",\n        \"instructor\": \"Instructor1\",\n        \"instructor_email\": \"inst1@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b\",\n        \"name\": \"Yoga\",\n        \"datetime_of_class\": \"2025-07-28T13:00:00+00:00\",\n        \"instructor\": \"Nanda\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 2,\n        \"instructor_email\": \"nanda@gmail.com\"\n    },\n    {\n        \"id\": \"class-5\",\n        \"name\": \"Cardio Blast\",\n        \"datetime_of_class\": \"2025-07-28T14:00:00+00:00\",\n        \"instructor\": \"Instructor1\",\n        \"instructor_email\": \"inst1@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-6\",\n        \"name\": \"Strength Training\",\n        \"datetime_of_class\": \"2025-07-28T16:00:00+00:00\",\n        \"instructor\": \"Instructor1\",\n        \"instructor_email\": \"inst1@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-7\",\n        \"name\": \"Zumba\",\n        \"datetime_of_class\": \"2025-07-28T18:00:00+00:00\",\n        \"instructor\": \"Instructor1\",\n        \"instructor_email\": \"inst1@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-8\",\n        \"name\": \"Meditation\",\n        \"datetime_of_class\": \"2025-07-28T20:00:00+00:00\",\n        \"instructor\": \"Instructor1\",\n        \"instructor_email\": \"inst1@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-9\",\n        \"name\": \"Stretch & Relax\",\n        \"datetime_of_class\": \"2025-07-28T22:00:00+00:00\",\n        \"instructor\": \"Instructor1\",\n        \"instructor_email\": \"inst1@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-10\",\n        \"name\": \"Core Focus\",\n        \"datetime_of_class\": \"2025-07-29T00:00:00+00:00\",\n        \"instructor\": \"Instructor1\",\n        \"instructor_email\": \"inst1@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-11\",\n        \"name\": \"Yoga Advanced\",\n        \"datetime_of_class\": \"2025-07-29T06:00:00+00:00\",\n        \"instructor\": \"Instructor2\",\n        \"instructor_email\": \"inst2@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-12\",\n        \"name\": \"Power Pilates\",\n        \"datetime_of_class\": \"2025-07-29T08:00:00+00:00\",\n        \"instructor\": \"Instructor2\",\n        \"instructor_email\": \"inst2@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-13\",\n        \"name\": \"HIIT Express\",\n        \"datetime_of_class\": \"2025-07-29T10:00:00+00:00\",\n        \"instructor\": \"Instructor2\",\n        \"instructor_email\": \"inst2@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-14\",\n        \"name\": \"Cardio Burn\",\n        \"datetime_of_class\": \"2025-07-29T12:00:00+00:00\",\n        \"instructor\": \"Instructor2\",\n        \"instructor_email\": \"inst2@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-15\",\n        \"name\": \"Strength Max\",\n        \"datetime_of_class\": \"2025-07-29T14:00:00+00:00\",\n        \"instructor\": \"Instructor2\",\n        \"instructor_email\": \"inst2@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-16\",\n        \"name\": \"Zumba Party\",\n        \"datetime_of_class\": \"2025-07-29T16:00:00+00:00\",\n        \"instructor\": \"Instructor2\",\n        \"instructor_email\": \"inst2@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-17\",\n        \"name\": \"Mindfulness\",\n        \"datetime_of_class\": \"2025-07-29T18:00:00+00:00\",\n        \"instructor\": \"Instructor2\",\n        \"instructor_email\": \"inst2@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-18\",\n        \"name\": \"Stretch & Strength\",\n        \"datetime_of_class\": \"2025-07-29T20:00:00+00:00\",\n        \"instructor\": \"Instructor2\",\n        \"instructor_email\": \"inst2@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-19\",\n        \"name\": \"Core Power\",\n        \"datetime_of_class\": \"2025-07-29T22:00:00+00:00\",\n        \"instructor\": \"Instructor2\",\n        \"instructor_email\": \"inst2@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-20\",\n        \"name\": \"Balance Flow\",\n        \"datetime_of_class\": \"2025-07-30T00:00:00+00:00\",\n        \"instructor\": \"Instructor2\",\n        \"instructor_email\": \"inst2@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-21\",\n        \"name\": \"Yoga for Athletes\",\n        \"datetime_of_class\": \"2025-07-30T06:00:00+00:00\",\n        \"instructor\": \"Instructor3\",\n        \"instructor_email\": \"inst3@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-22\",\n        \"name\": \"Pilates Core\",\n        \"datetime_of_class\": \"2025-07-30T08:00:00+00:00\",\n        \"instructor\": \"Instructor3\",\n        \"instructor_email\": \"inst3@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-23\",\n        \"name\": \"HIIT Challenge\",\n        \"datetime_of_class\": \"2025-07-30T10:00:00+00:00\",\n        \"instructor\": \"Instructor3\",\n        \"instructor_email\": \"inst3@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-24\",\n        \"name\": \"Cardio Dance\",\n        \"datetime_of_class\": \"2025-07-30T12:00:00+00:00\",\n        \"instructor\": \"Instructor3\",\n        \"instructor_email\": \"inst3@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-25\",\n        \"name\": \"Strength Circuit\",\n        \"datetime_of_class\": \"2025-07-30T14:00:00+00:00\",\n        \"instructor\": \"Instructor3\",\n        \"instructor_email\": \"inst3@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-26\",\n        \"name\": \"Zumba Fitness\",\n        \"datetime_of_class\": \"2025-07-30T16:00:00+00:00\",\n        \"instructor\": \"Instructor3\",\n        \"instructor_email\": \"inst3@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-27\",\n        \"name\": \"Meditation Flow\",\n        \"datetime_of_class\": \"2025-07-30T18:00:00+00:00\",\n        \"instructor\": \"Instructor3\",\n        \"instructor_email\": \"inst3@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-28\",\n        \"name\": \"Stretch & Tone\",\n        \"datetime_of_class\": \"2025-07-30T20:00:00+00:00\",\n        \"instructor\": \"Instructor3\",\n        \"instructor_email\": \"inst3@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-29\",\n        \"name\": \"Core Strength\",\n        \"datetime_of_class\": \"2025-07-30T22:00:00+00:00\",\n        \"instructor\": \"Instructor3\",\n        \"instructor_email\": \"inst3@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 20,\n        \"duration_in_hours\": 1\n    },\n    {\n        \"id\": \"class-30\",\n        \"name\": \"Balance & Flex\",\n        \"datetime_of_class\": \"2025-07-31T00:00:00+00:00\",\n        \"instructor\": \"Instructor3\",\n        \"instructor_email\": \"inst3@fit.com\",\n        \"total_slots\": 20,\n        \"remaining_slots\": 19,\n        \"duration_in_hours\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "4. Book a Class",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"class_id\": \"{{classId}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/book",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book"
+							]
+						},
+						"description": "Book a fitness class for the authenticated user.\n\n**Request Body:**\n- **class_id**: ID of the class to book\n\n**Features:**\n- Prevents double booking of the same class\n- Checks for slot availability\n- Validates class timing (no past classes)\n- Prevents overlapping bookings\n- Automatically decrements available slots"
+					},
+					"response": [
+						{
+							"name": "4. Book a Class",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"class_id\": \"{{classId}}\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/book",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:39:38 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "47"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Booking successful\"\n}"
+						}
+					]
+				},
+				{
+					"name": "5. View My Bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/book/bookings/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book",
+								"bookings",
+								"me"
+							],
+							"query": [
+								{
+									"key": "timezone",
+									"value": "Asia/Kolkata",
+									"description": "Timezone for datetime display",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get all bookings made by the current user, sorted by booking time.\n\n**Query Parameters:**\n- **timezone** (optional): Timezone string for datetime display\n\n**Response includes:**\n- Booking details with localized timestamps\n- Class information (name, instructor, datetime)\n- Sorted by booking time in ascending order"
+					},
+					"response": [
+						{
+							"name": "5. View My Bookings",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/book/bookings/me",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book",
+										"bookings",
+										"me"
+									],
+									"query": [
+										{
+											"key": "timezone",
+											"value": "Asia/Kolkata",
+											"description": "Timezone for datetime display",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:39:51 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "229"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"class_id\": \"8edb9703-340f-4c9b-874a-34754503c4b1\",\n        \"booked_at\": \"27-07-2025 19:09\",\n        \"user_email\": \"john.doe@example.com\",\n        \"user_name\": \"John Doe\",\n        \"class_name\": \"Meditation\",\n        \"instructor\": \"Rahul\",\n        \"datetime_of_class\": \"28-07-2025 04:30\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "6. Book Another Class",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"class_id\": \"{{classId2}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/book",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book"
+							]
+						},
+						"description": "Book an additional fitness class to demonstrate multiple bookings.\n\n**Request Body:**\n- **class_id**: ID of another class to book (using hardcoded class-2 for demo)\n\n**Note**: This demonstrates the system's ability to handle multiple bookings while preventing conflicts."
+					},
+					"response": [
+						{
+							"name": "6. Book Another Class",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"class_id\": \"{{classId2}}\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/book",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:44:28 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "47"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Booking successful\"\n}"
+						}
+					]
+				},
+				{
+					"name": "7. Verify Updated Bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/book/bookings/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book",
+								"bookings",
+								"me"
+							]
+						},
+						"description": "Verify that all bookings are correctly recorded and displayed.\n\nThis endpoint returns the same data as \"View My Bookings\" but serves as verification after making multiple bookings."
+					},
+					"response": [
+						{
+							"name": "7. Verify Updated Bookings",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/book/bookings/me",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book",
+										"bookings",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:44:41 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "452"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"class_id\": \"8edb9703-340f-4c9b-874a-34754503c4b1\",\n        \"booked_at\": \"27-07-2025 19:09\",\n        \"user_email\": \"john.doe@example.com\",\n        \"user_name\": \"John Doe\",\n        \"class_name\": \"Meditation\",\n        \"instructor\": \"Rahul\",\n        \"datetime_of_class\": \"28-07-2025 04:30\"\n    },\n    {\n        \"class_id\": \"b2c1f3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d\",\n        \"booked_at\": \"27-07-2025 19:14\",\n        \"user_email\": \"john.doe@example.com\",\n        \"user_name\": \"John Doe\",\n        \"class_name\": \"Zumba\",\n        \"instructor\": \"Anand\",\n        \"datetime_of_class\": \"28-07-2025 05:30\"\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "Complete workflow for regular users - signup, login, view classes, book classes, and view bookings",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{accessToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Instructor Workflow",
+			"item": [
+				{
+					"name": "1. Instructor Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Sarah Wilson",
+									"description": "Full name of the instructor"
+								},
+								{
+									"key": "email",
+									"value": "sarah.wilson@fitnessstudio.com",
+									"description": "Instructor email address"
+								},
+								{
+									"key": "password",
+									"value": "instructor123",
+									"description": "Password (min 8 characters)"
+								},
+								{
+									"key": "client_id",
+									"value": "instructor",
+									"description": "Client type - must be 'instructor' for instructor accounts"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						},
+						"description": "Register a new instructor account.\n\n**Parameters:**\n- **name**: Full name of the instructor\n- **email**: Instructor email address\n- **password**: Password (min 8 characters)\n- **client_id**: Must be 'instructor' for instructor accounts"
+					},
+					"response": [
+						{
+							"name": "1. Instructor Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Sarah Wilson",
+											"description": "Full name of the instructor"
+										},
+										{
+											"key": "email",
+											"value": "sarah.wilson@fitnessstudio.com",
+											"description": "Instructor email address"
+										},
+										{
+											"key": "password",
+											"value": "instructor123",
+											"description": "Password (min 8 characters)"
+										},
+										{
+											"key": "client_id",
+											"value": "instructor",
+											"description": "Client type - must be 'instructor' for instructor accounts"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:47:51 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "61"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"detail\": \"INSTRUCTOR signed up successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "2. Instructor Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Extract and store access token for instructor requests",
+									"if (pm.response.code === 200) {",
+									"    const responseJson = pm.response.json();",
+									"    if (responseJson.access_token) {",
+									"        pm.collectionVariables.set('instructorToken', responseJson.access_token);",
+									"        pm.collectionVariables.set('accessToken', responseJson.access_token);",
+									"        console.log('Instructor access token saved:', responseJson.access_token);",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "sarah.wilson@fitnessstudio.com",
+									"description": "Instructor email address"
+								},
+								{
+									"key": "password",
+									"value": "instructor123",
+									"description": "Password"
+								},
+								{
+									"key": "client_id",
+									"value": "instructor",
+									"description": "Client type - must be 'instructor'"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Login as an instructor and get JWT token.\n\n**Parameters:**\n- **username**: Instructor email address\n- **password**: Password\n- **client_id**: Must be 'instructor' for instructor login\n\n**Note**: The instructor access token is automatically captured and stored for use in subsequent requests."
+					},
+					"response": [
+						{
+							"name": "2. Instructor Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "sarah.wilson@fitnessstudio.com",
+											"description": "Instructor email address"
+										},
+										{
+											"key": "password",
+											"value": "instructor123",
+											"description": "Password"
+										},
+										{
+											"key": "client_id",
+											"value": "instructor",
+											"description": "Client type - must be 'instructor'"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:48:11 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "250"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2FyYWggV2lsc29uIiwiZW1haWwiOiJzYXJhaC53aWxzb25AZml0bmVzc3N0dWRpby5jb20iLCJyb2xlIjoiaW5zdHJ1Y3RvciIsImV4cCI6MTc1MzYyNDQ1MX0.2LCMDHYtcSGMnDhYXIRIpbv05mNTxTo2Pw4PpXlF59Y\"\n}"
+						}
+					]
+				},
+				{
+					"name": "3. Create a Class",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Store created class ID for later use",
+									"if (pm.response.code === 200) {",
+									"   const responseJson = pm.response.json();",
+									"   if (responseJson.class_id) {",
+									"       pm.collectionVariables.set('instructorClassId', responseJson.class_id);",
+									"       console.log('Class created successfully with ID:', responseJson.class_id);",
+									"   } else {",
+									"       console.log('Class created successfully but no class_id in response');",
+									"   }",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Advanced Yoga Flow\",\n    \"datetime_of_class\": \"2025-07-29T06:30:00\",\n    \"total_slots\": 15,\n    \"duration_in_hours\": 1\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/classes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"classes"
+							]
+						},
+						"description": "Create a new fitness class (instructor only).\n\n**Request Body:**\n- **name**: Name of the class\n- **datetime_of_class**: Class datetime in IST ISO format (e.g. \"2025-07-28T05:30:00\")\n- **total_slots**: Total slots available (default: 10)\n- **duration_in_hours**: Duration of class in hours (default: 1)\n\n**Features:**\n- Automatically assigns the instructor from JWT token\n- Validates datetime is in the future\n- Converts IST input to UTC for storage\n- Sets remaining_slots equal to total_slots initially"
+					},
+					"response": [
+						{
+							"name": "3. Create a Class",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Advanced Yoga Flow\",\n    \"datetime_of_class\": \"2025-07-29T06:30:00\",\n    \"total_slots\": 15,\n    \"duration_in_hours\": 1\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/classes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"classes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:50:56 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "102"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"detail\": \"Class successfully added\",\n    \"class_id\": \"5dddc870-96c6-4fa9-a823-57c46eadc426\"\n}"
+						}
+					]
+				},
+				{
+					"name": "4. View Bookings for My Classes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/book/bookings/me?class_id={{instructorClassId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book",
+								"bookings",
+								"me"
+							],
+							"query": [
+								{
+									"key": "class_id",
+									"value": "{{instructorClassId}}",
+									"description": "Mandatory for instructors - ID of the class to view bookings for"
+								}
+							]
+						},
+						"description": "Get all students who booked a specific class taught by the instructor.\n\n**Query Parameters:**\n- **class_id**: **Mandatory** for instructors - ID of the class to view bookings for\n\n**Authorization**: Only the instructor who created the class can view its bookings.\n\n**Response**: List of users who booked the class, sorted by booking time (most recent first)."
+					},
+					"response": [
+						{
+							"name": "4. View Bookings for My Classes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/book/bookings/me?class_id={{instructorClassId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book",
+										"bookings",
+										"me"
+									],
+									"query": [
+										{
+											"key": "class_id",
+											"value": "{{instructorClassId}}",
+											"description": "Mandatory for instructors - ID of the class to view bookings for"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:51:47 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "76"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"user_email\": \"sarah.wilson@fitnessstudio.com\",\n        \"user_name\": \"Sarah Wilson\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "5. Try Unauthorized Access",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/book/bookings/me?class_id={{randomClassId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book",
+								"bookings",
+								"me"
+							],
+							"query": [
+								{
+									"key": "class_id",
+									"value": "{{randomClassId}}",
+									"description": "Class ID for a class created by another instructor"
+								}
+							]
+						},
+						"description": "Attempt to view bookings for a class created by another instructor.\n\n**Expected Result**: This should fail with a 403 Forbidden error, demonstrating the security model.\n\n**Purpose**: Shows that instructors can only view bookings for classes they created, not classes created by other instructors."
+					},
+					"response": [
+						{
+							"name": "5. Try Unauthorized Access",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/book/bookings/me?class_id={{randomClassId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"book",
+										"bookings",
+										"me"
+									],
+									"query": [
+										{
+											"key": "class_id",
+											"value": "{{randomClassId}}",
+											"description": "Class ID for a class created by another instructor"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 27 Jul 2025 13:53:16 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "27"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not authorized\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Complete workflow for instructors - signup, login, create classes, and view student bookings",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{instructorToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Pre-request script for the entire collection",
+					"console.log('Starting request to:', pm.request.url.toString());"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Global test script for all requests",
+					"console.log('Response Status:', pm.response.code);",
+					"console.log('Response Time:', pm.response.responseTime + 'ms');"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "classId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "classId2",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "instructorToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "instructorClassId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "randomClassId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
