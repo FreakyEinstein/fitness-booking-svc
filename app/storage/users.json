@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Admin",
+        "email": "admin@fit.com",
+        "password": "$2b$12$adminhashedpassword",
+        "role": "admin"
+    },
+    {
+        "name": "Alice",
+        "email": "alice@fit.com",
+        "password": "$2b$12$alicehashedpassword",
+        "role": "user"
+    },
+    {
+        "name": "Bob",
+        "email": "bob@fit.com",
+        "password": "$2b$12$bobhashedpassword",
+        "role": "user"
+    },
+    {
+        "name": "Charlie",
+        "email": "charlie@fit.com",
+        "password": "$2b$12$charliehashedpassword",
+        "role": "user"
+    },
+    {
+        "name": "Diana",
+        "email": "diana@fit.com",
+        "password": "$2b$12$dianahashedpassword",
+        "role": "user"
+    },
+    {
+        "name": "Instructor1",
+        "email": "inst1@fit.com",
+        "password": "$2b$12$inst1hashedpassword",
+        "role": "instructor"
+    },
+    {
+        "name": "Instructor2",
+        "email": "inst2@fit.com",
+        "password": "$2b$12$inst2hashedpassword",
+        "role": "instructor"
+    },
+    {
+        "name": "Instructor3",
+        "email": "inst3@fit.com",
+        "password": "$2b$12$inst3hashedpassword",
+        "role": "instructor"
+    }
+]

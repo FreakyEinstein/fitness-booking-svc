@@ -1,0 +1,382 @@
+[
+    {
+        "id": "8edb9703-340f-4c9b-874a-34754503c4b1",
+        "name": "Meditation",
+        "datetime_of_class": "2025-07-27T23:00:00+00:00",
+        "instructor": "Rahul",
+        "total_slots": 5,
+        "remaining_slots": 2,
+        "duration_in_hours": 1,
+        "instructor_email": "nandakrishnak1999@gmail.com"
+    },
+    {
+        "id": "b2c1f3d4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+        "name": "Zumba",
+        "datetime_of_class": "2025-07-28T00:00:00+00:00",
+        "instructor": "Anand",
+        "total_slots": 15,
+        "remaining_slots": 13,
+        "duration_in_hours": 2,
+        "instructor_email": "nandakrishnak1999@gmail.com"
+    },
+    {
+        "id": "8d06db84-2ffd-4ed9-81bf-81e85abb4e6a",
+        "name": "Advance Zumba Class",
+        "datetime_of_class": "2025-07-28T00:00:00+00:00",
+        "total_slots": 7,
+        "duration_in_hours": 1,
+        "remaining_slots": 7,
+        "instructor": "Nanda",
+        "instructor_email": "nandakrishnak1999@gmail.com"
+    },
+    {
+        "id": "629dc5e6-1580-4ed8-86fc-8f27ccf0c870",
+        "name": "Test Class",
+        "datetime_of_class": "2025-07-28T00:00:00+00:00",
+        "total_slots": 10,
+        "duration_in_hours": 1,
+        "remaining_slots": 10,
+        "instructor": "Nanda",
+        "instructor_email": "nandakrishnak1999@gmail.com"
+    },
+    {
+        "id": "c3d4e5f6-7a8b-9c0d-e1f2-3a4b5c6d7e8f",
+        "name": "HIIT",
+        "datetime_of_class": "2025-07-28T05:00:00+00:00",
+        "instructor": "Kiran",
+        "total_slots": 10,
+        "remaining_slots": 10,
+        "duration_in_hours": 1,
+        "instructor_email": "nandakrishnak1999@gmail.com"
+    },
+    {
+        "id": "class-1",
+        "name": "Yoga Basics",
+        "datetime_of_class": "2025-07-28T06:00:00+00:00",
+        "instructor": "Instructor1",
+        "instructor_email": "inst1@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-2",
+        "name": "Power Yoga",
+        "datetime_of_class": "2025-07-28T08:00:00+00:00",
+        "instructor": "Instructor1",
+        "instructor_email": "inst1@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+        "name": "Cardio",
+        "datetime_of_class": "2025-07-28T09:00:00+00:00",
+        "instructor": "Phani",
+        "total_slots": 30,
+        "remaining_slots": 30,
+        "duration_in_hours": 1,
+        "instructor_email": "nandakrishnak1999@gmail.com"
+    },
+    {
+        "id": "a1c2648e-a769-44ab-80bb-1ffec4833a31",
+        "name": "Yoga",
+        "datetime_of_class": "2025-07-28T10:00:00+00:00",
+        "instructor": "Nanda",
+        "total_slots": 10,
+        "duration_in_hours": 1,
+        "remaining_slots": 9,
+        "instructor_email": "nandakrishnak1999@gmail.com"
+    },
+    {
+        "id": "class-3",
+        "name": "Pilates",
+        "datetime_of_class": "2025-07-28T10:00:00+00:00",
+        "instructor": "Instructor1",
+        "instructor_email": "inst1@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-4",
+        "name": "HIIT Morning",
+        "datetime_of_class": "2025-07-28T12:00:00+00:00",
+        "instructor": "Instructor1",
+        "instructor_email": "inst1@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+        "name": "Yoga",
+        "datetime_of_class": "2025-07-28T13:00:00+00:00",
+        "instructor": "Nanda",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 2,
+        "instructor_email": "nanda@gmail.com"
+    },
+    {
+        "id": "class-5",
+        "name": "Cardio Blast",
+        "datetime_of_class": "2025-07-28T14:00:00+00:00",
+        "instructor": "Instructor1",
+        "instructor_email": "inst1@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-6",
+        "name": "Strength Training",
+        "datetime_of_class": "2025-07-28T16:00:00+00:00",
+        "instructor": "Instructor1",
+        "instructor_email": "inst1@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-7",
+        "name": "Zumba",
+        "datetime_of_class": "2025-07-28T18:00:00+00:00",
+        "instructor": "Instructor1",
+        "instructor_email": "inst1@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-8",
+        "name": "Meditation",
+        "datetime_of_class": "2025-07-28T20:00:00+00:00",
+        "instructor": "Instructor1",
+        "instructor_email": "inst1@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-9",
+        "name": "Stretch & Relax",
+        "datetime_of_class": "2025-07-28T22:00:00+00:00",
+        "instructor": "Instructor1",
+        "instructor_email": "inst1@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-10",
+        "name": "Core Focus",
+        "datetime_of_class": "2025-07-29T00:00:00+00:00",
+        "instructor": "Instructor1",
+        "instructor_email": "inst1@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-11",
+        "name": "Yoga Advanced",
+        "datetime_of_class": "2025-07-29T06:00:00+00:00",
+        "instructor": "Instructor2",
+        "instructor_email": "inst2@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-12",
+        "name": "Power Pilates",
+        "datetime_of_class": "2025-07-29T08:00:00+00:00",
+        "instructor": "Instructor2",
+        "instructor_email": "inst2@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-13",
+        "name": "HIIT Express",
+        "datetime_of_class": "2025-07-29T10:00:00+00:00",
+        "instructor": "Instructor2",
+        "instructor_email": "inst2@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-14",
+        "name": "Cardio Burn",
+        "datetime_of_class": "2025-07-29T12:00:00+00:00",
+        "instructor": "Instructor2",
+        "instructor_email": "inst2@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-15",
+        "name": "Strength Max",
+        "datetime_of_class": "2025-07-29T14:00:00+00:00",
+        "instructor": "Instructor2",
+        "instructor_email": "inst2@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-16",
+        "name": "Zumba Party",
+        "datetime_of_class": "2025-07-29T16:00:00+00:00",
+        "instructor": "Instructor2",
+        "instructor_email": "inst2@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-17",
+        "name": "Mindfulness",
+        "datetime_of_class": "2025-07-29T18:00:00+00:00",
+        "instructor": "Instructor2",
+        "instructor_email": "inst2@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-18",
+        "name": "Stretch & Strength",
+        "datetime_of_class": "2025-07-29T20:00:00+00:00",
+        "instructor": "Instructor2",
+        "instructor_email": "inst2@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-19",
+        "name": "Core Power",
+        "datetime_of_class": "2025-07-29T22:00:00+00:00",
+        "instructor": "Instructor2",
+        "instructor_email": "inst2@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-20",
+        "name": "Balance Flow",
+        "datetime_of_class": "2025-07-30T00:00:00+00:00",
+        "instructor": "Instructor2",
+        "instructor_email": "inst2@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-21",
+        "name": "Yoga for Athletes",
+        "datetime_of_class": "2025-07-30T06:00:00+00:00",
+        "instructor": "Instructor3",
+        "instructor_email": "inst3@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-22",
+        "name": "Pilates Core",
+        "datetime_of_class": "2025-07-30T08:00:00+00:00",
+        "instructor": "Instructor3",
+        "instructor_email": "inst3@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-23",
+        "name": "HIIT Challenge",
+        "datetime_of_class": "2025-07-30T10:00:00+00:00",
+        "instructor": "Instructor3",
+        "instructor_email": "inst3@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-24",
+        "name": "Cardio Dance",
+        "datetime_of_class": "2025-07-30T12:00:00+00:00",
+        "instructor": "Instructor3",
+        "instructor_email": "inst3@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-25",
+        "name": "Strength Circuit",
+        "datetime_of_class": "2025-07-30T14:00:00+00:00",
+        "instructor": "Instructor3",
+        "instructor_email": "inst3@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-26",
+        "name": "Zumba Fitness",
+        "datetime_of_class": "2025-07-30T16:00:00+00:00",
+        "instructor": "Instructor3",
+        "instructor_email": "inst3@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-27",
+        "name": "Meditation Flow",
+        "datetime_of_class": "2025-07-30T18:00:00+00:00",
+        "instructor": "Instructor3",
+        "instructor_email": "inst3@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-28",
+        "name": "Stretch & Tone",
+        "datetime_of_class": "2025-07-30T20:00:00+00:00",
+        "instructor": "Instructor3",
+        "instructor_email": "inst3@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-29",
+        "name": "Core Strength",
+        "datetime_of_class": "2025-07-30T22:00:00+00:00",
+        "instructor": "Instructor3",
+        "instructor_email": "inst3@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 20,
+        "duration_in_hours": 1
+    },
+    {
+        "id": "class-30",
+        "name": "Balance & Flex",
+        "datetime_of_class": "2025-07-31T00:00:00+00:00",
+        "instructor": "Instructor3",
+        "instructor_email": "inst3@fit.com",
+        "total_slots": 20,
+        "remaining_slots": 19,
+        "duration_in_hours": 1
+    }
+]
