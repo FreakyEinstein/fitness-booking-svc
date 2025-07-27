@@ -3,10 +3,10 @@ from fastapi import FastAPI, Request
 import traceback
 import json
 import logging
-from fastapi import FastAPI
 from dotenv import load_dotenv
 from .routes import router
 from starlette.middleware.cors import CORSMiddleware
+from starlette.middleware.base import BaseHTTPMiddleware
 
 load_dotenv()
 
@@ -18,6 +18,20 @@ logging.basicConfig(
 )
 
 app = FastAPI()
+
+
+class RawBodyMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        request.state.body = await request.body()
+
+        async def receive():
+            return {"type": "http.request", "body": request.state.body}
+        request._receive = receive
+        response = await call_next(request)
+        return response
+
+
+app.add_middleware(RawBodyMiddleware)
 
 app.add_middleware(
     CORSMiddleware,
@@ -32,9 +46,24 @@ app.include_router(router)
 
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
+    # Use the raw body captured by middleware
+    body = getattr(request.state, "body", None)
     try:
-        body = await request.body()
-        body_str = body.decode("utf-8", errors="replace")
+        if body is not None:
+            try:
+                body_json = json.loads(body)
+                body_str = json.dumps(body_json, indent=2, ensure_ascii=False)
+            except Exception:
+                try:
+                    decoded = body.decode("utf-8", errors="replace")
+                    normalized = " ".join(decoded.split())
+                    if len(normalized) > 500:
+                        normalized = normalized[:500] + "... [truncated]"
+                    body_str = normalized
+                except Exception:
+                    body_str = str(body)
+        else:
+            body_str = "<no body captured>"
     except Exception:
         body_str = "<could not decode body>"
 
