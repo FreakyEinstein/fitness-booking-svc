@@ -5,7 +5,7 @@
         "datetime_of_class": "2025-07-27T23:00:00+00:00",
         "instructor": "Rahul",
         "total_slots": 5,
-        "remaining_slots": 2,
+        "remaining_slots": 1,
         "duration_in_hours": 1,
         "instructor_email": "nandakrishnak1999@gmail.com"
     },
@@ -15,7 +15,7 @@
         "datetime_of_class": "2025-07-28T00:00:00+00:00",
         "instructor": "Anand",
         "total_slots": 15,
-        "remaining_slots": 13,
+        "remaining_slots": 12,
         "duration_in_hours": 2,
         "instructor_email": "nandakrishnak1999@gmail.com"
     },
@@ -178,6 +178,16 @@
         "total_slots": 20,
         "remaining_slots": 20,
         "duration_in_hours": 1
+    },
+    {
+        "id": "5dddc870-96c6-4fa9-a823-57c46eadc426",
+        "name": "Advanced Yoga Flow",
+        "datetime_of_class": "2025-07-29T01:00:00+00:00",
+        "total_slots": 15,
+        "duration_in_hours": 1,
+        "remaining_slots": 14,
+        "instructor": "Sarah Wilson",
+        "instructor_email": "sarah.wilson@fitnessstudio.com"
     },
     {
         "id": "class-11",

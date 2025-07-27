@@ -46,5 +46,17 @@
         "email": "inst3@fit.com",
         "password": "$2b$12$inst3hashedpassword",
         "role": "instructor"
+    },
+    {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "password": "$2b$12$RcwgkH.8BGApONShZ5OOhucOAdTrTIKu0AwBioKCDmp7cWuzjBi92",
+        "role": "user"
+    },
+    {
+        "name": "Sarah Wilson",
+        "email": "sarah.wilson@fitnessstudio.com",
+        "password": "$2b$12$ZrQJ0vJf2PgbSV7btEJYYOcEgCnM9efvRlCFolgor5uU7KHtiTE9q",
+        "role": "instructor"
     }
 ]
