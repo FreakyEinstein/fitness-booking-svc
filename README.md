@@ -27,7 +27,18 @@ pipenv install
 
 This will install all dependencies listed in the `Pipfile`.
 
-### 3. Activate the Virtual Environment
+### 3. Configure Environment Variables (Optional)
+
+Create a `.env` file in the project root directory to customize the application settings. All environment variables are optional and have default values if not specified:
+
+```env
+JWT_SECRET_KEY=7e98823e91c2ba8e13ada1564c8f13654221f323
+JWT_ALGORITHM=HS256
+JWT_EXPIRY_IN_HOURS=6
+APP_TIMEZONE="Asia/Kolkata"
+```
+
+### 4. Activate the Virtual Environment
 
 ```bash
 pipenv shell
