@@ -5,6 +5,9 @@ from ..services.users_service import register_user, authenticate_user
 router = APIRouter()
 
 
+print("Hello, I'm in auth.py")
+
+
 @router.post("/signup")
 async def user_signup(
     name: str = Form(..., description="Full name of the user"),

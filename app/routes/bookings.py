@@ -7,6 +7,8 @@ from ..utils.classes import get_timezone_from_ip
 
 router = APIRouter()
 
+print("Hello, I'm in bookings.py")
+
 
 @router.post("")
 async def book_a_class(
