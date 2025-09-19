@@ -1,1 +1,38 @@
-[]
+[
+    {
+        "id": "income-1",
+        "user_email": "demo@smartfinance.com",
+        "name": "Software Engineer Salary",
+        "amount": 7500.0,
+        "frequency": "monthly",
+        "description": "Full-time job",
+        "created_at": "2025-09-19T16:21:47.385101+00:00"
+    },
+    {
+        "id": "income-2",
+        "user_email": "demo@smartfinance.com",
+        "name": "Consulting Work",
+        "amount": 1200.0,
+        "frequency": "monthly",
+        "description": "Weekend consulting",
+        "created_at": "2025-09-19T16:21:47.385101+00:00"
+    },
+    {
+        "id": "income-3",
+        "user_email": "demo@smartfinance.com",
+        "name": "Investment Dividends",
+        "amount": 150.0,
+        "frequency": "monthly",
+        "description": "Stock dividends",
+        "created_at": "2025-09-19T16:21:47.385101+00:00"
+    },
+    {
+        "id": "income-4",
+        "user_email": "demo@smartfinance.com",
+        "name": "Side Project",
+        "amount": 300.0,
+        "frequency": "weekly",
+        "description": "Freelance coding",
+        "created_at": "2025-09-19T16:21:47.385101+00:00"
+    }
+]
